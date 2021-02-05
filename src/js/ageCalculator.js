@@ -16,7 +16,7 @@ export default class AgeCalculator {
   }
 
   lifeExpectancy() {
-    let avgLifeExpectancy = 65;
+    let avgLifeExpectancy = 70;
     let firstWorldCountries = 
       [
         "Belgium", "Canada", "Denmark",
@@ -28,6 +28,7 @@ export default class AgeCalculator {
         "South Korea", "Austria", "Ireland",
         "Sweden", "Switzerland"
       ];
-    
+    firstWorldCountries.includes(this.userInfo.get("country")) ? avgLifeExpectancy += 5 : avgLifeExpectancy -= 10;
+    return avgLifeExpectancy;
   }
 }
