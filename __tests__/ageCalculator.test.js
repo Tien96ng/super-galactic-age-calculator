@@ -4,7 +4,7 @@ describe("AgeCalculator", () => {
   let person;
 
   beforeAll(() => {
-    person = new AgeCalculator(15, "USA", 10, "Male", "Low");
+    person = new AgeCalculator(15, "USA", 10, "Low");
   });
 
   afterAll(() => {
@@ -34,17 +34,22 @@ describe("AgeCalculator", () => {
   test("Should return map of user's information entered.", () => {
     expect(person.userInfo.get("country")).toEqual("USA");
     expect(person.userInfo.get("activityLevel")).toEqual(10);
-    expect(person.userInfo.get("gender")).toEqual("Male");
     expect(person.userInfo.get("incomeClass")).toEqual("Low");
   });
 
   test("Should return life expectancy depending if they live in a first world country or not.", () => {
-    const personLivingInThirdWorld = new AgeCalculator(15, "Vietnam", 10, "Male", "Low");
-    expect(person.lifeExpectancy()).toEqual(79);
-    expect(personLivingInThirdWorld.lifeExpectancy()).toEqual(64);
+    const personLivingInThirdWorld = new AgeCalculator(15, "Vietnam", 10, "Low");
+    expect(person.lifeExpectancy()).toEqual(69);
+    expect(personLivingInThirdWorld.lifeExpectancy()).toEqual(54);
   });
 
-  test("Should the person's life expectancy depending on their country, activity levels, gender, and income class.", () => {
-    expect(person.lifeExpectancy()).toEqual(79);
+  test("Should return life expectancy depending on their income class, especially if they're low income.", () => {
+    const highIncomePerson = new AgeCalculator(15, "USA", 10, "High");
+    expect(highIncomePerson.lifeExpectancy()).toEqual(84);
+    expect(person.lifeExpectancy()).toEqual(69);
+  });
+
+  test("Should the person's life expectancy depending on their country, activity levels, and income class.", () => {
+    expect(person.lifeExpectancy()).toEqual(69);
   });
 });

@@ -1,5 +1,5 @@
 export default class AgeCalculator {
-  constructor(earthAge, country, activityLevel, gender, incomeClass) {
+  constructor(earthAge, country, activityLevel, incomeClass) {
     this.earthAge = earthAge;
     this.mercuryAge = parseFloat((earthAge / .24).toFixed(2));
     this.venusAge = parseFloat((earthAge / .62).toFixed(2));
@@ -9,7 +9,6 @@ export default class AgeCalculator {
       [
         ["country", country],
         ["activityLevel", activityLevel],
-        ["gender", gender],
         ["incomeClass", incomeClass]
       ]
     );
@@ -29,13 +28,13 @@ export default class AgeCalculator {
         "Sweden", "Switzerland"
       ];
     firstWorldCountries.includes(this.userInfo.get("country")) ? avgLifeExpectancy += 5 : avgLifeExpectancy -= 10;
+    this.userInfo.get("incomeClass") === "Low" ? avgLifeExpectancy -= 10 : avgLifeExpectancy += 5;
     switch(this.userInfo.get("activityLevel")) {
       case 10: avgLifeExpectancy++;
       case 9: avgLifeExpectancy++;
       case 8: avgLifeExpectancy++;
       case 7: avgLifeExpectancy++;
       default: break;
-
     }
     return avgLifeExpectancy;
   }
