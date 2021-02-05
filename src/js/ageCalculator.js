@@ -16,6 +16,18 @@ export default class AgeCalculator {
   }
 
   lifeExpectancy() {
-    return;
+    let avgLifeExpectancy = 65;
+    let firstWorldCountries = 
+      [
+        "Belgium", "Canada", "Denmark",
+        "France",	"Germany", "Greece",
+        "Iceland", "Italy", "Luxembourg",
+        "Netherlands", "Norway", "Portugal",
+        "Spain", "Turkey",	"United Kingdom",
+        "USA", "Israel", "Japan",
+        "South Korea", "Austria", "Ireland",
+        "Sweden", "Switzerland"
+      ];
+    
   }
 }
