@@ -29,6 +29,14 @@ export default class AgeCalculator {
         "Sweden", "Switzerland"
       ];
     firstWorldCountries.includes(this.userInfo.get("country")) ? avgLifeExpectancy += 5 : avgLifeExpectancy -= 10;
+    switch(this.userInfo.get("activityLevel")) {
+      case 10: avgLifeExpectancy++;
+      case 9: avgLifeExpectancy++;
+      case 8: avgLifeExpectancy++;
+      case 7: avgLifeExpectancy++;
+      default: break;
+
+    }
     return avgLifeExpectancy;
   }
 }
