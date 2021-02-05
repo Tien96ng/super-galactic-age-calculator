@@ -20,6 +20,6 @@ describe("AgeCalculator", () => {
   });
 
   test("Should return the given earth age in Mars years.", () => {
-    expect(person.marsAge).toEqual(24.19);
+    expect(person.marsAge).toEqual(7.98);
   });
 });
