@@ -37,4 +37,8 @@ describe("AgeCalculator", () => {
     expect(person.userInfo.get("gender")).toEqual("Male");
     expect(person.userInfo.get("incomeClass")).toEqual("Low");
   });
+
+  test("Should the person's life expectancy depending on their country, activity levels, gender, and income class.", () => {
+    expect(person.lifeExpectancy()).toEqual(2);
+  });
 });

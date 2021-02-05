@@ -14,4 +14,8 @@ export default class AgeCalculator {
       ]
     );
   }
+
+  lifeExpectancy() {
+    return;
+  }
 }
