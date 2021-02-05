@@ -3,8 +3,12 @@ import AgeCalculator from "../src/js/ageCalculator.js";
 describe("AgeCalculator", () => {
   let person;
 
-  beforeEach(() => {
-    person = new AgeCalculator(15);
+  beforeAll(() => {
+    person = new AgeCalculator(15, "USA", 8, "Male", "Low")
+  });
+
+  afterAll(() => {
+    return person;
   });
 
   test("Should return the given earth age.", () => {
@@ -25,5 +29,12 @@ describe("AgeCalculator", () => {
 
   test("Should return the given earth age in Jupiter years.", () => {
     expect(person.jupiterAge).toEqual(1.28);
+  });
+
+  test("Should return map of user's information entered.", () => {
+    expect(person.userInfo.get("country")).toEqual("USA");
+    expect(person.userInfo.get("activityLevel")).toEqual(8);
+    expect(person.userInfo.get("gender")).toEqual("Male");
+    expect(person.userInfo.get("incomeClass")).toEqual("Low");
   });
 });
