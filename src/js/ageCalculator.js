@@ -1,6 +1,6 @@
 export default class AgeCalculator {
   constructor(earthAge) {
     this.earthAge = earthAge;
-    this.marsAge;
+    this.mercuryAge = earthAge / .24;;
   }
 }

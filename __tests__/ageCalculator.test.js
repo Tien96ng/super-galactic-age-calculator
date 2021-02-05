@@ -1,9 +1,13 @@
 import AgeCalculator from "../src/js/ageCalculator.js";
 
 describe("AgeCalculator", () => {
-  test("Should return the age given.", () => {
-    const sam = new AgeCalculator(15)
-    expect(sam.earthAge).toEqual(15);
-    expect(sam.marsAge).toEqual(15);
+  let person;
+
+  beforeEach(() => {
+    person = new AgeCalculator(15);
+  });
+
+  test("Should return the age given earth age.", () => {
+    expect(person.earthAge).toEqual(15);
   });
 });
