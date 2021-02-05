@@ -24,6 +24,6 @@ describe("AgeCalculator", () => {
   });
 
   test("Should return the given earth age in Jupiter years.", () => {
-    expect(person.jupiterAge).toEqual(7.98);
+    expect(person.jupiterAge).toEqual(1.28);
   });
 });
