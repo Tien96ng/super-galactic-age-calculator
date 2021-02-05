@@ -18,4 +18,8 @@ describe("AgeCalculator", () => {
   test("Should return the given earth age in Venus years.", () => {
     expect(person.venusAge).toEqual(24.19);
   });
+
+  test("Should return the given earth age in Mars years.", () => {
+    expect(person.marsAge).toEqual(24.19);
+  });
 });
