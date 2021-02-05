@@ -14,4 +14,8 @@ describe("AgeCalculator", () => {
   test("Should return the given earth age in Mercury years.", () => {
     expect(person.mercuryAge).toEqual(62.5);
   });
+
+  test("Should return the given earth age in Venus years.", () => {
+    expect(person.venusAge).toEqual(24.19);
+  });
 });
