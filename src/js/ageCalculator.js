@@ -12,7 +12,7 @@ export default class AgeCalculator {
         ["incomeClass", incomeClass]
       ]
     );
-    this.planetLifeExpectancyObj = [
+    this.planetLifeExpectancyArr = [
       {
         planet: "earth",
         avgLifeExpectancy: this.lifeExpectancy(1),
@@ -70,7 +70,12 @@ export default class AgeCalculator {
     return this.calculatePlanetAge(avgLifeExpectancy, multipler);
   }
 
-  calculateYearsLeft(avgLifeExpectancy, planetAge) {
-    return avgLifeExpectancy - planetAge;
+  yearsOnEachPlanet() {
+    let yearsOnEachPlanetArr = []
+    let ages = [this.earthAge, this.mercuryAge, this.venusAge, this.marsAge, this.jupiterAge];
+    for(let i = 0; i < this.planetLifeExpectancyArr.length; i++) {
+      yearsOnEachPlanetArr.push(parseFloat((this.planetLifeExpectancyArr[i].avgLifeExpectancy - ages[i]).toFixed(2)));
+    }
+    return yearsOnEachPlanetArr;
   }
 }

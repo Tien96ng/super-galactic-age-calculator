@@ -61,19 +61,22 @@ describe("AgeCalculator", () => {
   });
 
   test("Should return an object with the user's life expectancy on earth, mercury, venus, mars, jupiter.", () => {
-    expect(person.planetLifeExpectancyObj[0].avgLifeExpectancy).toEqual(69);
-    expect(person.planetLifeExpectancyObj[1].avgLifeExpectancy).toEqual(287.5);
-    expect(person.planetLifeExpectancyObj[2].avgLifeExpectancy).toEqual(111.29);
-    expect(person.planetLifeExpectancyObj[3].avgLifeExpectancy).toEqual(36.7);
-    expect(person.planetLifeExpectancyObj[4].avgLifeExpectancy).toEqual(5.91);
+    expect(person.planetLifeExpectancyArr[0].avgLifeExpectancy).toEqual(69);
+    expect(person.planetLifeExpectancyArr[1].avgLifeExpectancy).toEqual(287.5);
+    expect(person.planetLifeExpectancyArr[2].avgLifeExpectancy).toEqual(111.29);
+    expect(person.planetLifeExpectancyArr[3].avgLifeExpectancy).toEqual(36.7);
+    expect(person.planetLifeExpectancyArr[4].avgLifeExpectancy).toEqual(5.91);
   });
 
-  test("Should return a positive number if the user is approaching their death, signaling how long they have left to live.", () => {
-    expect(person.calculateYearsLeft(70, 15)).toEqual(55);
-  });
+  // test("Should return a positive number if the user is approaching their death, signaling how long they have left to live.", () => {
+  //   expect(person.calculateYearsLeft(70, 15)).toEqual(55);
+  // });
 
-  test("Should return a negative number if the user has lived pass their projected average life expectancy.", () => {
-    expect(person.calculateYearsLeft(70, 71)).toEqual(-1);
-  });
+  // test("Should return a negative number if the user has lived pass their projected average life expectancy.", () => {
+  //   expect(person.calculateYearsLeft(70, 71)).toEqual(-1);
+  // });
 
+  test("Should return an array of years left to live on each planet or how many years they lives past.", () => {
+    expect(person.yearsOnEachPlanet()).toEqual([54, 225, 87.1, 28.72, 4.63]);
+  });
 });
