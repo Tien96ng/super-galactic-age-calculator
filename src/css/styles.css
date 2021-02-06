@@ -1,3 +1,23 @@
 body {
-  background-color: lightblue;
+  background-color: black;
+  color: white;
+}
+
+#intro {
+  padding: 10px;
+  text-align: center;
+  border: solid black 1px;
+  color:	rgb(220,220,220);
+}
+
+.title {
+  color: #C74A39;
+}
+
+#age-form {
+  text-align: center;
+}
+
+.form-section, #intro {
+  margin-top: 40px;
 }
