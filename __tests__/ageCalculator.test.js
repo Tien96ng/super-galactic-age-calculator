@@ -72,4 +72,8 @@ describe("AgeCalculator", () => {
     expect(person.calculateYearsLeft(70, 15)).toEqual(55);
   });
 
+  test("Should return a negative number if the user has lived pass their projected average life expectancy.", () => {
+    expect(person.calculateYearsLeft(70, 71)).toEqual(-1);
+  });
+
 });
