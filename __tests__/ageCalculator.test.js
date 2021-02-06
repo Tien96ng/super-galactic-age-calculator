@@ -15,7 +15,7 @@ describe("AgeCalculator", () => {
     expect(person.earthAge).toEqual(15);
   });
 
-  test("Should return the user's age depending on the multipler and base planet given.", () => {
+  test("Should return the user's age depending on the multipler and base planet age given.", () => {
     expect(person.calculatePlanetAge(person.earthAge, .24)).toEqual(62.5);
     expect(person.calculatePlanetAge(person.earthAge, .62)).toEqual(24.19);
     expect(person.calculatePlanetAge(person.earthAge, 1.88)).toEqual(7.98);
@@ -46,17 +46,25 @@ describe("AgeCalculator", () => {
 
   test("Should return life expectancy depending if they live in a first world country or not.", () => {
     const personLivingInThirdWorld = new AgeCalculator(15, "Vietnam", 10, "Low");
-    expect(person.lifeExpectancy()).toEqual(69);
-    expect(personLivingInThirdWorld.lifeExpectancy()).toEqual(54);
+    expect(person.lifeExpectancy(1)).toEqual(69);
+    expect(personLivingInThirdWorld.lifeExpectancy(1)).toEqual(54);
   });
 
   test("Should return life expectancy depending on their income class, especially if they're low income.", () => {
     const highIncomePerson = new AgeCalculator(15, "USA", 10, "High");
-    expect(highIncomePerson.lifeExpectancy()).toEqual(84);
-    expect(person.lifeExpectancy()).toEqual(69);
+    expect(highIncomePerson.lifeExpectancy(1)).toEqual(84);
+    expect(person.lifeExpectancy(1)).toEqual(69);
   });
 
   test("Should the person's life expectancy depending on their country, activity levels, and income class.", () => {
-    expect(person.lifeExpectancy()).toEqual(69);
+    expect(person.lifeExpectancy(1)).toEqual(69);
+  });
+
+  test("Should return an object with the user's life expectancy on earth, mercury, venus, mars, jupiter.", () => {
+    expect(person.planetLifeExpectancyObj[0].avgLifeExpectancy).toEqual(69);
+    expect(person.planetLifeExpectancyObj[1].avgLifeExpectancy).toEqual(287.5);
+    expect(person.planetLifeExpectancyObj[2].avgLifeExpectancy).toEqual(111.29);
+    expect(person.planetLifeExpectancyObj[3].avgLifeExpectancy).toEqual(36.7);
+    expect(person.planetLifeExpectancyObj[4].avgLifeExpectancy).toEqual(5.91);
   });
 });
