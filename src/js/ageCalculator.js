@@ -15,28 +15,31 @@ export default class AgeCalculator {
     this.planetLifeExpectancyObj = [
       {
         planet: "earth",
-        avgLifeExpectancy: this.lifeExpectancy(1)
+        avgLifeExpectancy: this.lifeExpectancy(1),
+        yearsLeftToLive: 0
       },
       {
         planet: "mercury",
-        avgLifeExpectancy: this.lifeExpectancy(.24)
+        avgLifeExpectancy: this.lifeExpectancy(.24),
+        yearsLeftToLive: 0
       },
       {
         planet: "venus",
-        avgLifeExpectancy: this.lifeExpectancy(.62)
+        avgLifeExpectancy: this.lifeExpectancy(.62),
+        yearsLeftToLive: 0
       },
       {
         planet: "mars",
-        avgLifeExpectancy: this.lifeExpectancy(1.88)
+        avgLifeExpectancy: this.lifeExpectancy(1.88),
+        yearsLeftToLive: 0
       },
       {
         planet: "jupiter",
-        avgLifeExpectancy: this.lifeExpectancy(11.68)
+        avgLifeExpectancy: this.lifeExpectancy(11.68),
+        yearsLeftToLive: 0
       }
     ];
   }
-
-
 
   calculatePlanetAge(planetAge, multiplier) {
     return parseFloat((planetAge/ multiplier).toFixed(2));
@@ -65,5 +68,9 @@ export default class AgeCalculator {
       default: break;
     }
     return this.calculatePlanetAge(avgLifeExpectancy, multipler);
+  }
+
+  calculateYearsLeft(avgLifeExpectancy, planetAge) {
+    return avgLifeExpectancy - planetAge;
   }
 }

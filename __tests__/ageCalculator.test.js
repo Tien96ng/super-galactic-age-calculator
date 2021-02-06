@@ -67,4 +67,9 @@ describe("AgeCalculator", () => {
     expect(person.planetLifeExpectancyObj[3].avgLifeExpectancy).toEqual(36.7);
     expect(person.planetLifeExpectancyObj[4].avgLifeExpectancy).toEqual(5.91);
   });
+
+  test("Should return a positive number if the user is approaching their death, signaling how long they have left to live.", () => {
+    expect(person.calculateYearsLeft(70, 15)).toEqual(55);
+  });
+
 });
