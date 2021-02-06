@@ -68,15 +68,15 @@ describe("AgeCalculator", () => {
     expect(person.planetLifeExpectancyArr[4].avgLifeExpectancy).toEqual(5.91);
   });
 
-  // test("Should return a positive number if the user is approaching their death, signaling how long they have left to live.", () => {
-  //   expect(person.calculateYearsLeft(70, 15)).toEqual(55);
-  // });
-
-  // test("Should return a negative number if the user has lived pass their projected average life expectancy.", () => {
-  //   expect(person.calculateYearsLeft(70, 71)).toEqual(-1);
-  // });
-
   test("Should return an array of years left to live on each planet or how many years they lives past.", () => {
-    expect(person.yearsOnEachPlanet()).toEqual([54, 225, 87.1, 28.72, 4.63]);
+    expect(person.yearsOnEachPlanet()).toEqual(
+      [
+        "You have 54.00 years left Earth",
+        "You have 225.00 years left Mercury",
+        "You have 87.10 years left Venus",
+        "You have 28.72 years left Mars",
+        "You have 4.63 years left Jupiter",
+      ]);
   });
+
 });

@@ -16,27 +16,22 @@ export default class AgeCalculator {
       {
         planet: "earth",
         avgLifeExpectancy: this.lifeExpectancy(1),
-        yearsLeftToLive: 0
       },
       {
         planet: "mercury",
         avgLifeExpectancy: this.lifeExpectancy(.24),
-        yearsLeftToLive: 0
       },
       {
         planet: "venus",
         avgLifeExpectancy: this.lifeExpectancy(.62),
-        yearsLeftToLive: 0
       },
       {
         planet: "mars",
         avgLifeExpectancy: this.lifeExpectancy(1.88),
-        yearsLeftToLive: 0
       },
       {
         planet: "jupiter",
         avgLifeExpectancy: this.lifeExpectancy(11.68),
-        yearsLeftToLive: 0
       }
     ];
   }
@@ -72,9 +67,19 @@ export default class AgeCalculator {
 
   yearsOnEachPlanet() {
     let yearsOnEachPlanetArr = []
-    let ages = [this.earthAge, this.mercuryAge, this.venusAge, this.marsAge, this.jupiterAge];
+    let ages = 
+      [
+        ["Earth", this.earthAge],
+        ["Mercury", this.mercuryAge],
+        ["Venus", this.venusAge],
+        ["Mars", this.marsAge],
+        ["Jupiter", this.jupiterAge]
+      ];
     for(let i = 0; i < this.planetLifeExpectancyArr.length; i++) {
-      yearsOnEachPlanetArr.push(parseFloat((this.planetLifeExpectancyArr[i].avgLifeExpectancy - ages[i]).toFixed(2)));
+      let years = parseFloat(this.planetLifeExpectancyArr[i].avgLifeExpectancy - ages[i][1]).toFixed(2);
+      years > 0 ?
+        yearsOnEachPlanetArr.push(`You have ${years} years left ${ages[i][0]}`) :
+        yearsOnEachPlanetArr.push(`You have lived ${years} pass the average life expectancy on ${ages[i][0]}`)
     }
     return yearsOnEachPlanetArr;
   }
