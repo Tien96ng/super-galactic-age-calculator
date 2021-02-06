@@ -15,6 +15,13 @@ describe("AgeCalculator", () => {
     expect(person.earthAge).toEqual(15);
   });
 
+  test("Should return the user's age depending on the multipler given.", () => {
+    expect(person.calculatePlanetAge(.24)).toEqual(62.5);
+    expect(person.calculatePlanetAge(.62)).toEqual(24.19);
+    expect(person.calculatePlanetAge(1.88)).toEqual(7.98);
+    expect(person.calculatePlanetAge(11.68)).toEqual(1.28);
+  });
+
   test("Should return the given earth age in Mercury years.", () => {
     expect(person.mercuryAge).toEqual(62.5);
   });

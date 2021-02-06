@@ -1,6 +1,6 @@
-# (Application Name)
+# Super Galactic Age Calculator
 
-#### (Brief Description of Application)
+#### This app determines a user's age on different planets and their li
 
 #### By (Your Name Here)
 

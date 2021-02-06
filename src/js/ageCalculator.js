@@ -1,10 +1,10 @@
 export default class AgeCalculator {
   constructor(earthAge, country, activityLevel, incomeClass) {
     this.earthAge = earthAge;
-    this.mercuryAge = parseFloat((earthAge / .24).toFixed(2));
-    this.venusAge = parseFloat((earthAge / .62).toFixed(2));
-    this.marsAge = parseFloat((earthAge / 1.88).toFixed(2));
-    this.jupiterAge = parseFloat((earthAge / 11.68).toFixed(2));
+    this.mercuryAge = this.calculatePlanetAge(.24);
+    this.venusAge = this.calculatePlanetAge(.62);
+    this.marsAge = this.calculatePlanetAge(1.88);
+    this.jupiterAge = this.calculatePlanetAge(11.68);
     this.userInfo = new Map(
       [
         ["country", country],
@@ -12,6 +12,10 @@ export default class AgeCalculator {
         ["incomeClass", incomeClass]
       ]
     );
+  }
+
+  calculatePlanetAge(multiplier) {
+    return parseFloat((this.earthAge / multiplier).toFixed(2));
   }
 
   lifeExpectancy() {
