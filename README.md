@@ -39,7 +39,7 @@ _This Web app takes in the user's current age on Earth. Then it displays their e
 _If you'd rather see a Live version, CLICK [HERE](https://tien96ng.github.io/super-galactic-age-calculator)!_
 
 ## Known Bugs
-* _None at the moment._
+* _None at the moment (2/4/2021)._
 
 ## License
 _This software is licensed under the MIT license_
